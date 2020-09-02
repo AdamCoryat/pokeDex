@@ -4,7 +4,7 @@ import { ProxyState } from "../AppState.js"
 
 class ApiPokemonsServices{
   async getAllApiPokemon() {
-    let res = await pokemonApi.get('')
+    let res = await pokemonApi.get('?limit=1050')
     ProxyState.apiPokemon = res.data.results
   }
 
