@@ -8,9 +8,11 @@ class ApiPokemonsServices{
     ProxyState.apiPokemon = res.data.results
   }
 
-  async getDetails(id){
-    let res = await pokemonApi.get(id)
-    ProxyState.activePokemon = new Pokemon(res.data)
+  async getDetails(name){
+    let res = await pokemonApi.get(name)
+    ProxyState.activePokemon = new Pokemon(res.data.data)
+
+    console.log(res)
   }
 
 }
