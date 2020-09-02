@@ -10,9 +10,7 @@ class ApiPokemonsServices{
 
   async getDetails(name){
     let res = await pokemonApi.get(name)
-    ProxyState.activePokemon = new Pokemon(res.data.data)
-
-    console.log(res)
+    ProxyState.activePokemon = new Pokemon(res.data)
   }
 
 }
